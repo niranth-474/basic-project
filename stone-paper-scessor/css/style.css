@@ -1,0 +1,179 @@
+:root {
+  --bg-color: #eef2f5; 
+  --card-bg: #ffffff; 
+  --text-color: #3f51b5; 
+  --secondary-text-color: #616161; 
+  --accent-blue: #4285f4; 
+  --accent-green: #34a853; 
+  --accent-red: #ea4335;
+  --light-gray-border: #e0e0e0; 
+  --button-hover-bg: #f5f5f5; 
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--secondary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  background-color: var(--card-bg);
+  padding: 45px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 
+              0 0 0 8px rgba(255, 255, 255, 0.5); 
+  max-width: 550px;
+  width: 90%;
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.game-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border-bottom: 2px solid var(--light-gray-border);
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.score-card {
+  text-align: center;
+  background: linear-gradient(145deg, #f9f9f9, #eceff1); 
+  padding: 18px 35px;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05); 
+  border: 1px solid var(--light-gray-border);
+}
+
+.score-card p {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--secondary-text-color);
+}
+
+.score-card span {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  transition: transform 0.3s ease-out, color 0.3s ease;
+  display: inline-block;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.score-card.player-score span {
+  color: var(--accent-green);
+}
+
+.score-card.computer-score span {
+  color: var(--accent-red);
+}
+
+.result-display {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px;
+  min-height: 2.5rem;
+  color: var(--text-color);
+  transition: color 0.4s ease, transform 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.result-display.win { color: var(--accent-green); transform: scale(1.05); }
+.result-display.lose { color: var(--accent-red); transform: scale(1.05); }
+.result-display.draw { color: var(--accent-blue); transform: scale(1.05); }
+
+.choices {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.choice-btn {
+  background: var(--card-bg);
+  border: 2px solid var(--light-gray-border);
+  border-radius: 50%;
+  padding: 25px;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choice-btn:hover {
+  transform: translateY(-8px) scale(1.08);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-blue); 
+}
+
+.choice-btn:active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--button-hover-bg);
+}
+
+.choice-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.reset-btn {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 6px 15px rgba(66, 133, 244, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.reset-btn:hover {
+  background: #5c9bff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(66, 133, 244, 0.4);
+}
+
+.reset-btn:active {
+  background: #3a75e1;
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(66, 133, 244, 0.3);
+}
+

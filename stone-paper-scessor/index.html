@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Rock Paper Scissors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="game-container">
+    <header class="game-header">
+      <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <div class="score-board">
+      <div class="score-card player-score">
+        <p>You</p>
+        <span id="player-score">0</span>
+      </div>
+      <div class="score-card computer-score">
+        <p>Computer</p>
+        <span id="computer-score">0</span>
+      </div>
+    </div>
+
+    <div id="result-display" class="result-display">
+      Make your move!
+    </div>
+
+    <div class="choices">
+      <button class="choice-btn" id="rock">
+        rock
+      </button>
+      <button class="choice-btn" id="paper">
+      paper
+      </button>
+      <button class="choice-btn" id="scissors">
+        scissors
+      </button>
+    </div>
+
+    <button id="reset-btn" class="reset-btn">Reset Score</button>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
